@@ -36,7 +36,7 @@ class Stack1
                 if (top < 0)
                 {
                         System.out.println("Stack is empty!");
-                        return -1; 
+                        return-1; 
                 }
                 else
                 {
