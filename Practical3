@@ -1,0 +1,56 @@
+class Stack1 {
+    int stck[];
+    int top;
+    
+    Stack1(int s) {
+        stck = new int[s];
+        top = -1;
+    }
+
+    void push(int item) {
+        if (top >= stck.length - 1) {  // Fixed condition to check for a full stack
+            System.out.println("Stack is full");
+        } else {
+            stck[++top] = item;
+        }
+    }
+
+    int pop() {
+        if (top < 0) {  // Stack is empty
+            System.out.println("Stack is empty!");
+            return -1; 
+        } else {
+            return stck[top--];
+        }
+    }
+
+    int peek() {
+        if (top < 0) {  // Stack is empty
+            System.out.println("Stack is empty!");
+            return -1; 
+        } else {
+            return stck[top];
+        }
+    }
+}
+
+public class Practical3 {
+    public static void main(String[] args) {
+        Stack1 s1 = new Stack1(4);  // Create a stack of size 4
+        
+        // Pushing elements into the stack
+        for (int i = 1; i <= 4; i++) {
+            s1.push(i * 5);  // Push 5, 10, 15, 20 into the stack
+        }
+        
+        System.out.println("Stack Contents:");
+        
+        // Popping elements from the stack and printing them
+        for (int i = 0; i < 4; i++) {
+            System.out.println(s1.pop());
+        }
+        
+        // Checking the top element after popping all elements
+        System.out.println("Top element after popping all elements: " + s1.peek());
+    }
+}
